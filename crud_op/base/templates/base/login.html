@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+
+
+
+{% block content %}
+
+<style>
+
+    .login_container{
+        background-color: rgb(255, 38, 0);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 15px;
+        height: 300px;
+        border-radius: 5px;
+    }
+    .login_container h2{
+        font-size: 2rem;
+        position: absolute;
+        top: 10px;
+        margin-bottom: 20px;
+    }
+    .login_container input[type="submit"]{
+        background-color: rgb(0, 174, 255);
+        padding: 5px;
+        width: 90px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        text-align: center;
+        margin-left: 60px;
+        margin-top: 30px;
+
+    }
+    </style>
+
+
+
+<div class="login_container">
+    <h2>Login</h2>{{msg}}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Login">
+</form>
+</div>
+{% endblock content %}

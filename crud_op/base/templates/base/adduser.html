@@ -1,0 +1,33 @@
+{% block content %}
+
+<style>
+
+</style>
+<a href="{% url 'home' %}">go back</a>
+<p>add user...</p>
+
+<form action="{% url 'adduser' %}" method="post">
+    {% csrf_token %}
+      <label >NAME:</label>
+      {{form.name}}
+
+      <label >Email:</label>
+      {{form.email}}
+
+      <label >password:</label>
+      {{form.password}}
+
+      <label >ContactNumber:</label>
+      {{form.contactnumber}}
+
+
+      <label >Age:</label>
+      {{form.age}}
+
+      <label >Gender:</label>
+      {{form.gender}}
+
+      <input type="submit" value="login">
+
+</form>
+{% endblock content %}
